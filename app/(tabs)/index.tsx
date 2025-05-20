@@ -13,6 +13,7 @@ import SearchBar from "@/components/SearchBar";
 import { useRouter } from "expo-router";
 import useFetch from "@/services/useFetch";
 import { fetchMovies } from "@/services/api";
+import MovieCard from "@/components/MovieCard";
 
 export default function Index() {
   const route = useRouter();
@@ -60,9 +61,7 @@ export default function Index() {
             </Text>
             <FlatList
               data={movies}
-              renderItem={({ item }) => (
-                <Text className="text-white text-sm">{item.title}</Text>
-              )}
+              renderItem={({ item }) => <MovieCard {...item} />}
               keyExtractor={(item) => item.id.toString()}
               numColumns={3}
               columnWrapperStyle={{

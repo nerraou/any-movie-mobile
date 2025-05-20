@@ -26,5 +26,3 @@ export const fetchMovies = async ({ query }: { query: string }) => {
 
   return data.results;
 };
-
-// https://api.themoviedb.org/3/discover/movie?api_key=26ae3b9725a6d74a5f7ceb9ad94f8c67
